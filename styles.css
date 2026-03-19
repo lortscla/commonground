@@ -122,7 +122,7 @@ a { color: inherit; text-decoration: none; }
   padding: 0 clamp(20px, 4vw, 40px);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .nav-logo-link { display: flex; }
@@ -131,12 +131,15 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  color: var(--olive-dark);
 }
 
-.nav-logo-img {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
+.nav-logo .bottle-icon {
+  width: 14px;
+  height: auto;
 }
 
 .nav-links {
@@ -231,32 +234,35 @@ a { color: inherit; text-decoration: none; }
 
 .hero-content {
   position: relative;
+  width: 80%;
   z-index: 2;
-  padding: 80px 20px 120px;
 }
 
-.hero-logo-placeholder {
-  margin: 0 auto 24px;
-  opacity: 0;
-  animation: fadeUp 1s 0.3s forwards;
-}
-
-.hero-logo-img {
-  max-width: clamp(260px, 40vw, 450px);
-  height: auto;
-  object-fit: contain;
-  display: block;
+.logo-mark {
   margin: 0 auto;
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeUp 1s 0.2s forwards;
 }
 
-.hero-rule {
-  width: 80px;
-  height: 2px;
-  background: var(--olive);
-  margin: 24px auto;
-  opacity: 0;
-  animation: fadeUp 1s 0.6s forwards;
+.logo-mark img {
+  width: 50%;
+  height: auto;
 }
+
+.logo-bottle {
+  width: 32px;
+  height: auto;
+}
+
+
+.title-line {
+  display: block;
+}
+
+
 
 .hero-tagline {
   font-size: clamp(1rem, 2vw, 1.25rem);
@@ -463,18 +469,11 @@ a { color: inherit; text-decoration: none; }
 
 .wine-card-visual {
   position: relative;
+  height: 280px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--cream-dark);
-}
-
-.wine-label-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
 }
 
 .wine-card--white .wine-card-visual {
@@ -483,6 +482,30 @@ a { color: inherit; text-decoration: none; }
 
 .wine-card--red .wine-card-visual {
   background: linear-gradient(180deg, #4a2840 0%, #6a3a50 30%, #8a5a48 60%, #c8845a 100%);
+}
+
+.wine-leaves, .wine-grapes {
+  position: relative;
+  z-index: 2;
+}
+
+.wine-leaves svg, .wine-grapes svg {
+  width: 160px;
+  height: auto;
+}
+
+.wine-hills {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  line-height: 0;
+}
+
+.wine-hills svg {
+  width: 100%;
+  height: 80px;
 }
 
 .wine-card-info {
@@ -611,7 +634,7 @@ blockquote {
 }
 
 .footer-hills {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -628,13 +651,18 @@ blockquote {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  color: var(--olive-dark);
   margin-bottom: 8px;
 }
 
-.footer-logo-img {
-  max-width: 200px;
+.footer-logo img {
+  width: 20%;
   height: auto;
-  object-fit: contain;
+  margin-top: 20px;
 }
 
 .footer-tagline {
