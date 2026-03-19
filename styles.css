@@ -131,15 +131,12 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.04em;
-  color: var(--olive-dark);
 }
 
-.nav-logo .bottle-icon {
-  width: 14px;
-  height: auto;
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-links {
@@ -238,29 +235,18 @@ a { color: inherit; text-decoration: none; }
   padding: 80px 20px 120px;
 }
 
-.logo-mark {
+.hero-logo-placeholder {
   margin: 0 auto 24px;
   opacity: 0;
-  animation: fadeUp 1s 0.2s forwards;
+  animation: fadeUp 1s 0.3s forwards;
 }
 
-.logo-bottle {
-  width: 32px;
+.hero-logo-img {
+  max-width: clamp(260px, 40vw, 450px);
   height: auto;
-}
-
-.hero-title {
-  font-size: clamp(3.2rem, 8vw, 6.5rem);
-  font-weight: 300;
-  letter-spacing: 0.06em;
-  line-height: 1.1;
-  color: var(--olive-dark);
-  opacity: 0;
-  animation: fadeUp 1s 0.4s forwards;
-}
-
-.title-line {
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
 .hero-rule {
@@ -477,11 +463,18 @@ a { color: inherit; text-decoration: none; }
 
 .wine-card-visual {
   position: relative;
-  height: 280px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--cream-dark);
+}
+
+.wine-label-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 .wine-card--white .wine-card-visual {
@@ -490,30 +483,6 @@ a { color: inherit; text-decoration: none; }
 
 .wine-card--red .wine-card-visual {
   background: linear-gradient(180deg, #4a2840 0%, #6a3a50 30%, #8a5a48 60%, #c8845a 100%);
-}
-
-.wine-leaves, .wine-grapes {
-  position: relative;
-  z-index: 2;
-}
-
-.wine-leaves svg, .wine-grapes svg {
-  width: 160px;
-  height: auto;
-}
-
-.wine-hills {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  line-height: 0;
-}
-
-.wine-hills svg {
-  width: 100%;
-  height: 80px;
 }
 
 .wine-card-info {
@@ -659,17 +628,13 @@ blockquote {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  font-weight: 700;
-  font-size: 1.3rem;
-  letter-spacing: 0.05em;
-  color: var(--olive-dark);
   margin-bottom: 8px;
 }
 
-.footer-logo .bottle-icon {
-  width: 16px;
+.footer-logo-img {
+  max-width: 200px;
   height: auto;
+  object-fit: contain;
 }
 
 .footer-tagline {
