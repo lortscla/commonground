@@ -1,0 +1,762 @@
+/* ============================================
+   Common Ground Vineyards — Stylesheet
+   ============================================ */
+
+:root {
+  /* Brand Colors from labels */
+  --olive: #6a8c3a;
+  --olive-dark: #4a6628;
+  --olive-light: #8aac5a;
+  --teal: #7ebcb5;
+  --teal-light: #b8ddd8;
+  --teal-bg: #dceee9;
+  --wine-dark: #3d1f35;
+  --wine-mid: #6b3a5c;
+  --grape: #7a4a6a;
+  --sunset: #c8845a;
+  --sunset-light: #e8b88a;
+  --cream: #f4f1ea;
+  --cream-dark: #e8e2d6;
+  --hill-back: #7a9e4a;
+  --hill-front: #5a7e2e;
+  --hill-dark: #2a4a18;
+  --text: #2c2c2c;
+  --text-light: #5a5a5a;
+  --text-inv: #f0ece4;
+  --white: #ffffff;
+
+  /* Typography */
+  --font: 'Quicksand', sans-serif;
+
+  /* Spacing */
+  --section-pad: clamp(80px, 10vw, 140px);
+}
+
+/* ============================================
+   Reset & Base
+   ============================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--cream);
+  overflow-x: hidden;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px);
+}
+
+/* ============================================
+   Background Vine Leaves
+   ============================================ */
+
+.vine-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  color: var(--olive);
+}
+
+.vine-leaf {
+  position: absolute;
+  animation: float-leaf 20s ease-in-out infinite;
+}
+
+.leaf-1 { width: 180px; top: 5%; left: -30px; animation-delay: 0s; }
+.leaf-2 { width: 140px; top: 25%; right: -20px; animation-delay: -4s; transform: rotate(45deg); }
+.leaf-3 { width: 100px; top: 55%; left: 5%; animation-delay: -8s; transform: rotate(-20deg); }
+.leaf-4 { width: 160px; top: 70%; right: 3%; animation-delay: -12s; transform: rotate(30deg); }
+.leaf-5 { width: 120px; top: 40%; left: 50%; animation-delay: -6s; transform: rotate(60deg); }
+.leaf-6 { width: 90px; top: 85%; left: 20%; animation-delay: -15s; transform: rotate(-40deg); }
+
+@keyframes float-leaf {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-15px) rotate(var(--r, 0deg)); }
+}
+
+/* ============================================
+   Navigation
+   ============================================ */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 0;
+  transition: background 0.4s, box-shadow 0.4s, padding 0.4s;
+}
+
+.nav.scrolled {
+  background: rgba(244, 241, 234, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  padding: 10px 0;
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo-link { display: flex; }
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  color: var(--olive-dark);
+}
+
+.nav-logo .bottle-icon {
+  width: 14px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--olive);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover { color: var(--olive-dark); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--olive-dark);
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 16px clamp(20px, 4vw, 40px);
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mobile-menu a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+@media (max-width: 680px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+}
+
+/* ============================================
+   Hero
+   ============================================ */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(175deg, var(--cream) 0%, var(--teal-bg) 50%, var(--teal-light) 100%);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 20px 120px;
+}
+
+.logo-mark {
+  margin: 0 auto 24px;
+  opacity: 0;
+  animation: fadeUp 1s 0.2s forwards;
+}
+
+.logo-bottle {
+  width: 32px;
+  height: auto;
+}
+
+.hero-title {
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  color: var(--olive-dark);
+  opacity: 0;
+  animation: fadeUp 1s 0.4s forwards;
+}
+
+.title-line {
+  display: block;
+}
+
+.hero-rule {
+  width: 80px;
+  height: 2px;
+  background: var(--olive);
+  margin: 24px auto;
+  opacity: 0;
+  animation: fadeUp 1s 0.6s forwards;
+}
+
+.hero-tagline {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 500;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+  opacity: 0;
+  animation: fadeUp 1s 0.8s forwards;
+}
+
+.scroll-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--olive-dark);
+  opacity: 0;
+  animation: fadeUp 1s 1s forwards;
+  transition: gap 0.3s;
+}
+
+.scroll-cta:hover { gap: 12px; }
+
+.scroll-cta svg {
+  animation: bobDown 2s ease-in-out infinite;
+}
+
+@keyframes bobDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+.hero-hills {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  line-height: 0;
+}
+
+.hero-hills svg {
+  width: 100%;
+  height: auto;
+  min-height: 120px;
+}
+
+/* ============================================
+   Section Headers
+   ============================================ */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  color: var(--olive-dark);
+}
+
+.section-rule {
+  width: 50px;
+  height: 2px;
+  background: var(--olive);
+  margin: 20px auto;
+}
+
+.section-desc {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ============================================
+   Story Section
+   ============================================ */
+
+.story {
+  position: relative;
+  z-index: 1;
+  padding: var(--section-pad) 0;
+  background: var(--cream);
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.story-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 36px 32px;
+  border: 1px solid rgba(106, 140, 58, 0.12);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.story-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(106, 140, 58, 0.1);
+}
+
+.story-card--main {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--white) 0%, var(--teal-bg) 100%);
+  text-align: center;
+  padding: 48px 40px;
+}
+
+.story-card--main p {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.story-card--main p + p {
+  margin-top: 16px;
+  font-weight: 600;
+  color: var(--olive-dark);
+  font-size: 1.05rem;
+}
+
+.story-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+}
+
+.story-card--main .story-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 28px;
+}
+
+.story-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--olive-dark);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.story-card p {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  line-height: 1.75;
+}
+
+@media (max-width: 680px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   Synergy Section
+   ============================================ */
+
+.synergy {
+  position: relative;
+  z-index: 1;
+  padding: var(--section-pad) 0;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-dark) 100%);
+}
+
+.wine-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.wine-card {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.wine-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+
+.wine-card-visual {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wine-card--white .wine-card-visual {
+  background: linear-gradient(180deg, #c8e8e4 0%, #a0d4cc 40%, #8ec6be 100%);
+}
+
+.wine-card--red .wine-card-visual {
+  background: linear-gradient(180deg, #4a2840 0%, #6a3a50 30%, #8a5a48 60%, #c8845a 100%);
+}
+
+.wine-leaves, .wine-grapes {
+  position: relative;
+  z-index: 2;
+}
+
+.wine-leaves svg, .wine-grapes svg {
+  width: 160px;
+  height: auto;
+}
+
+.wine-hills {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  line-height: 0;
+}
+
+.wine-hills svg {
+  width: 100%;
+  height: 80px;
+}
+
+.wine-card-info {
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.wine-card--white .wine-card-info {
+  background: var(--white);
+}
+
+.wine-card--red .wine-card-info {
+  background: var(--wine-dark);
+  color: var(--text-inv);
+}
+
+.wine-year {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.wine-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 4px 0 8px;
+}
+
+.wine-card--white .wine-name { color: var(--olive-dark); }
+.wine-card--red .wine-name { color: var(--text-inv); }
+
+.wine-blend {
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.wine-card--white .wine-blend { color: var(--text-light); }
+.wine-card--red .wine-blend { color: rgba(240, 236, 228, 0.7); }
+
+.wine-motto {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+.wine-card--white .wine-motto { color: var(--olive); }
+.wine-card--red .wine-motto { color: var(--sunset-light); }
+
+@media (max-width: 680px) {
+  .wine-showcase {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
+
+/* ============================================
+   Philosophy Section
+   ============================================ */
+
+.philosophy {
+  position: relative;
+  z-index: 1;
+  padding: var(--section-pad) 0;
+  background: linear-gradient(160deg, var(--wine-dark) 0%, #2a1525 40%, #1a1018 100%);
+  color: var(--text-inv);
+  text-align: center;
+}
+
+.philosophy-content {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 8rem;
+  line-height: 0.6;
+  color: var(--olive);
+  opacity: 0.25;
+  font-family: Georgia, serif;
+  margin-bottom: 10px;
+}
+
+blockquote {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.9;
+  color: rgba(240, 236, 228, 0.85);
+}
+
+.philosophy-footer {
+  margin-top: 36px;
+}
+
+.philosophy-footer .section-rule {
+  background: var(--olive);
+  opacity: 0.5;
+}
+
+.philosophy-footer p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--olive-light);
+  line-height: 1.7;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 60px 0 40px;
+  background: var(--cream);
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer-hills {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  line-height: 0;
+  pointer-events: none;
+}
+
+.footer-hills svg {
+  width: 100%;
+  height: 100px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  color: var(--olive-dark);
+  margin-bottom: 8px;
+}
+
+.footer-logo .bottle-icon {
+  width: 16px;
+  height: auto;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.footer-warning {
+  max-width: 600px;
+  margin: 0 auto 24px;
+  padding: 20px 24px;
+  background: rgba(106, 140, 58, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(106, 140, 58, 0.1);
+}
+
+.footer-warning p {
+  font-size: 0.7rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  opacity: 0.6;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in[data-delay="1"] { transition-delay: 0.15s; }
+.fade-in[data-delay="2"] { transition-delay: 0.3s; }
+.fade-in[data-delay="3"] { transition-delay: 0.45s; }
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   Scrollbar
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--olive-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--olive);
+}
+
+/* ============================================
+   Selection
+   ============================================ */
+
+::selection {
+  background: rgba(106, 140, 58, 0.2);
+  color: var(--olive-dark);
+}
