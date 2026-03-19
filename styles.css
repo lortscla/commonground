@@ -662,7 +662,7 @@ blockquote {
 .footer-logo img {
   width: 20%;
   height: auto;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .footer-tagline {

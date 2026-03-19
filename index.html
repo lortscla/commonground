@@ -93,7 +93,7 @@
       <div class="story-grid">
         <div class="story-card story-card--main fade-in">
           <div class="story-icon">
-            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <img src="leaf.webp" alt="Common Ground Logo">
               <circle cx="40" cy="40" r="38" fill="none" stroke="var(--olive)" stroke-width="1.5" opacity="0.4"/>
               <path d="M40 15 C25 25, 12 40, 18 58 C24 72, 38 78, 40 78 C42 78, 56 72, 62 58 C68 40, 55 25, 40 15Z" fill="var(--olive)" opacity="0.2"/>
               <path d="M40 15 L40 78" stroke="var(--olive)" stroke-width="1.5"/>
@@ -107,12 +107,8 @@
         </div>
 
         <div class="story-card fade-in" data-delay="1">
-          <div class="story-icon">
-            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 70 C20 50, 25 35, 35 25 C35 25, 30 45, 40 55 C50 45, 45 25, 45 25 C55 35, 60 50, 60 70" stroke="var(--olive)" stroke-width="1.5" fill="none"/>
-              <path d="M30 70 L30 45 C30 35, 40 20, 40 10 C40 20, 50 35, 50 45 L50 70" stroke="var(--olive)" stroke-width="1" fill="var(--olive)" opacity="0.15"/>
-              <line x1="15" y1="70" x2="65" y2="70" stroke="var(--olive)" stroke-width="1.5"/>
-            </svg>
+          <div class="story-icon-roots">
+            <img src="joined-roots.webp" alt="Fused Roots">
           </div>
           <h3>Fused Roots</h3>
           <p>Over time, grape vines growing next to each other fuse roots. This allows vines to share nutrition and water with others in need during droughts or nutrient deficiencies. It also reduces disease spread since different varieties have varying resistance.</p>
@@ -145,6 +141,20 @@
           <h3>Resilience Over Uniformity</h3>
           <p>A monoculture is efficient on paper, but it is fragile by nature. A diverse vineyard&mdash;made up of different varieties grown among each other&mdash;is something far more productive and enduring. Diversity, when working together, creates something stronger than uniformity ever could.</p>
         </div>
+
+        <div class="story-card fade-in" data-delay="3">
+          <div class="story-icon">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 65 Q25 30, 40 45 Q55 60, 70 25" stroke="var(--olive)" stroke-width="2" fill="none"/>
+              <circle cx="10" cy="65" r="4" fill="var(--olive)" opacity="0.4"/>
+              <circle cx="40" cy="45" r="4" fill="var(--olive)" opacity="0.6"/>
+              <circle cx="70" cy="25" r="4" fill="var(--olive)" opacity="0.8"/>
+            </svg>
+          </div>
+          <h3>Community is our Strength</h3>
+          <p>A monoculture is efficient on paper, but it is fragile by nature. A diverse vineyard&mdash;made up of different varieties grown among each other&mdash;is something far more productive and enduring. Diversity, when working together, creates something stronger than uniformity ever could.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -162,59 +172,12 @@
       <div class="wine-showcase">
         <!-- White Wine -->
         <div class="wine-card wine-card--white fade-in">
-          <div class="wine-card-visual">
-            <div class="wine-card-bg"></div>
-            <div class="wine-leaves" aria-hidden="true">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path d="M80 30 C50 45, 25 80, 40 120 C50 145, 75 160, 85 160 C90 160, 100 155, 105 140 C110 155, 120 160, 125 160 C135 160, 160 145, 170 120 C185 80, 160 45, 130 30 C120 25, 110 30, 105 40 C100 30, 90 25, 80 30Z" fill="var(--olive)" opacity="0.7"/>
-                <path d="M105 40 L105 160" stroke="#fff" stroke-width="1" opacity="0.3"/>
-              </svg>
-            </div>
-            <div class="wine-hills" aria-hidden="true">
-              <svg viewBox="0 0 400 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,80 C100,40 200,90 300,50 C350,30 400,60 400,60 L400,120 L0,120Z" fill="var(--olive)" opacity="0.3"/>
-                <path d="M0,95 C150,60 250,100 400,75 L400,120 L0,120Z" fill="var(--olive)" opacity="0.4"/>
-              </svg>
-            </div>
-          </div>
-          <div class="wine-card-info">
-            <span class="wine-year">2023</span>
-            <h3 class="wine-name">Synergy</h3>
-            <p class="wine-blend">Reisling + Muscato</p>
-            <p class="wine-motto"><em>Better Together</em></p>
-          </div>
+          <img src="white-label-front.webp" alt="Synergy White Wine Bottle">
         </div>
 
         <!-- Red Wine -->
         <div class="wine-card wine-card--red fade-in" data-delay="1">
-          <div class="wine-card-visual">
-            <div class="wine-card-bg"></div>
-            <div class="wine-grapes" aria-hidden="true">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="85" cy="70" r="16" fill="var(--grape)" opacity="0.8"/>
-                <circle cx="115" cy="70" r="16" fill="var(--grape)" opacity="0.75"/>
-                <circle cx="70" cy="95" r="16" fill="var(--grape)" opacity="0.85"/>
-                <circle cx="100" cy="95" r="16" fill="var(--grape)" opacity="0.7"/>
-                <circle cx="130" cy="95" r="16" fill="var(--grape)" opacity="0.8"/>
-                <circle cx="85" cy="120" r="16" fill="var(--grape)" opacity="0.75"/>
-                <circle cx="115" cy="120" r="16" fill="var(--grape)" opacity="0.85"/>
-                <circle cx="100" cy="145" r="16" fill="var(--grape)" opacity="0.8"/>
-                <path d="M95 55 L85 30 C85 25, 95 20, 100 25 L110 30 C115 20, 120 25, 115 35 L105 50" fill="var(--olive)" opacity="0.6"/>
-              </svg>
-            </div>
-            <div class="wine-hills" aria-hidden="true">
-              <svg viewBox="0 0 400 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0,80 C100,40 200,90 300,50 C350,30 400,60 400,60 L400,120 L0,120Z" fill="var(--hill-dark)" opacity="0.5"/>
-                <path d="M0,95 C150,60 250,100 400,75 L400,120 L0,120Z" fill="var(--hill-dark)" opacity="0.6"/>
-              </svg>
-            </div>
-          </div>
-          <div class="wine-card-info">
-            <span class="wine-year">2023</span>
-            <h3 class="wine-name">Synergy</h3>
-            <p class="wine-blend">Pinot Noir + Syrah</p>
-            <p class="wine-motto"><em>Better Together</em></p>
-          </div>
+          <img src="red-label-front.webp" alt="Synergy Red Wine Bottle">
         </div>
       </div>
     </div>
