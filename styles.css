@@ -662,14 +662,14 @@ blockquote {
 .footer-logo img {
   width: 20%;
   height: auto;
-  margin-top: 0px;
+  margin-top: 15px;
 }
 
 .footer-tagline {
   font-size: 0.9rem;
   color: var(--text-light);
   font-weight: 500;
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 .footer-warning {
