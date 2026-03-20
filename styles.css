@@ -210,10 +210,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
 }
 
-@media (max-width: 680px) {
-  .nav-links { display: none; }
-  .nav-toggle { display: flex; }
-}
+
 
 /* ============================================
    Hero
@@ -431,10 +428,24 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.75;
 }
 
-@media (max-width: 680px) {
-  .story-grid {
+
+
+@media screen and (max-width: 680px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+.wine-showcase {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+}
+
+  .logo-mark img { 
+    width: 90%; 
+  }
+
+    .story-grid {
     grid-template-columns: 1fr;
   }
+
 }
 
 /* ============================================
@@ -560,12 +571,7 @@ a { color: inherit; text-decoration: none; }
 .wine-card--white .wine-motto { color: var(--olive); }
 .wine-card--red .wine-motto { color: var(--sunset-light); }
 
-@media (max-width: 680px) {
-  .wine-showcase {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-  }
-}
+
 
 /* ============================================
    Philosophy Section
