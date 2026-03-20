@@ -373,7 +373,7 @@ a { color: inherit; text-decoration: none; }
 .story-card {
   background: var(--white);
   border-radius: 16px;
-  padding: 36px 32px;
+  padding: 10px 30px 30px 30px;
   border: 1px solid rgba(106, 140, 58, 0.12);
   transition: transform 0.4s, box-shadow 0.4s;
 }
@@ -402,9 +402,33 @@ a { color: inherit; text-decoration: none; }
   font-size: 1.05rem;
 }
 
-.story-icon {
-  width: 64px;
-  height: 64px;
+.story-icon-roots {
+  width: 200px;
+  margin-top:0;
+  margin: 0 auto 20px;
+}
+
+.story-icon-diverse {
+  width: 145px;
+   margin-top:0;
+  margin: 0 auto 20px;
+}
+
+.story-icon-resilience {
+  width: 250px;
+   margin-top:0;
+   padding-bottom: 32px;
+  margin: 0 auto 20px;
+}
+
+.story-icon-resilience img {
+  width: 100%;
+  height: auto;
+}
+
+.story-icon-community {
+  width: 370px;
+   margin-top:0;
   margin: 0 auto 20px;
 }
 
